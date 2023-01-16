@@ -21,8 +21,6 @@ import random
 with open("C:/Users/bapto/OneDrive/Bureau/AP-QUIZ-BRA/questionslibrary.json", "r") as f:
     data = json.load(f)
 
-main()
-
 
 def main():
     # recupère les donnée ranger et mélanger dans la fonction tri
@@ -95,28 +93,30 @@ def choix_nombre_QCM():
 
 
 def quiz(qs, nq, nqcm):
-
+    # compte le nombre de point
     points = 0
     for i, (qu, an) in enumerate(qs.items()):
-        if i >= nq:
-            break
-        print(qu)
-
+        # recupère les bonne réponse en premier pour être sur d'avoi au moins une bonne réponse
         melangeOption = an['answer'].copy()
+        # comble avec des mauvaise réponse
         melangeOption.extend(an['options'][:nqcm-len(an['answer'])])
+        # mélange le tout
         random.shuffle(melangeOption)
-
+        # affiche le QCM
         for j, opt in enumerate(melangeOption):
             print(f"{j+1}. {opt}")
 
         answer = input("Recopier la bonne réponse :")
         print(an['answer'])
+
+        # vérifie si la réponse est bonne c'est le truc qui est pas fini
         if answer in an['answer']:
             print("Correct!")
+
             points += 1
         else:
             print("Incorrect!")
     return points
 
 
-# pour gildas et robin
+main()
