@@ -12,14 +12,10 @@
 # Le code sera documenté pour le comprendre du mieux possible.
 # l faudra concevoir une notice utilisateur indiquant le mode opératoire pour adapter le jeu aux besoins de l'utilisateur.
 # =========================================================================================================================
-# =========================================================================================================================
-
-
 import json
-import random
 
 # récupération des questions et des réponses dans le fichier JSON
-with open("C:/Users/bapto/OneDrive/Bureau/AP-QUIZ-BRA/questionslibrary.json", "r") as f:
+with open("C:/Users/bapto/OneDrive/Bureau/AP-QUIZ-BRA/itération/1er itération/questionslibrary.json", "r") as f:
     data = json.load(f)
 
 
@@ -30,39 +26,10 @@ def nombre_question():
     return nombre_questions
 
 
-def nombre_question():
-    # demande le nombre de question pour le quiz
-    print("Combien shouaitez vous de question pour votre quizz ?")
-    nombre_questions = int(input())
-    return nombre_questions
-
-
-def choix_theme():
-    # choisi un theme pour le quiz
-    print("Sélectionnez un theme:")
-    print("1. animaux")
-    print("2. géographie")
-    print("3. langues")
-    choix = input()
-    if choix == "1":
-        theme = ""
-    elif choix == "2":
-        theme = "geographie"
-    elif choix == "3":
-        theme = "langues"
-    else:
-        variable = "Sélection non valide"
-    print("vous avez choisi {} comme theme de quizz ! ".format(theme))
-    return theme
-
-
 def tri_questions():
-    theme = choix_theme()
-    # mélange les questions
-    random.shuffle(data[theme])
     # tri pour garde que le contenue des questions et des réponses
     result = {}
-    for item in data[theme]:
+    for item in data['questionslibrary']:
         result[item["questions"]] = item["answers"]
     return result
 
@@ -81,7 +48,7 @@ def quiz(qs, nq):
     '''
     fonction de quizz et calcul des points
     paramètre d'entree: sq: type Dictionnaire 
-    paramètre de sortie: a
+    paramètre de sortie:
     '''
     points = 0
     for i, (qu, an) in enumerate(qs.items()):

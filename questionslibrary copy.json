@@ -1,0 +1,113 @@
+{
+    "animaux": [
+        {
+            "questions": "Comment s'appelle le petit du lion ",
+            "answers": "lionceau"
+        }
+    ],
+    "geographie": [
+        {
+            "questions": "Quel est la capitale du Perou ?",
+            "answers": "Lima"
+        },
+        {
+            "questions": "Quel est la longueur du canal de Nantes a Brest ",
+            "answers": "260"
+        }
+    ],
+    "langues": [
+        {
+            "questions": "Comment dit-on plage en espagnol ",
+            "answers": "playa"
+        }
+    ]
+}
+
+
+
+
+# Afficher les questions et les réponses
+for question in quizz_data['questions'
+]:
+    print(question['text'
+])
+    for i, option in enumerate(question['options'
+]):
+        print(f"{i+1}. {option}")
+    # Demander à l'utilisateur de saisir sa réponse
+    user_answer = input("Entrez le numéro de la réponse: ")
+    # Vérifier si la réponse est correcte
+    if int(user_answer) == question['answer'
+]:
+        print("Bonne réponse!")
+    else:
+        print("Mauvaise réponse.")
+
+    "questions": [
+    {
+        "text": "Quelle est la capitale de la France?",
+        "options": [
+            "Paris",
+            "Londres",
+            "Berlin",
+            "New York"
+        ],
+        "answer": 1
+    },
+    {
+        "text": "Quel est le plus grand pays du monde?",
+        "options": [
+            "Etats-Unis",
+            "Chine",
+            "Russie",
+            "Canada"
+        ],
+        "answer": 3
+    }
+]
+}
+
+{
+"questions": [
+    {
+        "text": "Quelle est la capitale de la France?",
+        "options": [
+            "Paris",
+            "Londres",
+            "Berlin",
+            "New York"
+        ],
+        "answer": 1
+    },
+    {
+        "text": "Quel est le plus grand pays du monde?",
+        "options": [
+            "Etats-Unis",
+            "Chine",
+            "Russie",
+            "Canada"
+        ],
+        "answer": 3
+    },
+    {
+        "text": "Quel est le plus petit pays du monde?",
+        "options": [
+            "Vatican",
+            "Monaco",
+            "Nauru",
+            "Tuvalu"
+        ],
+        "answer": 1
+    },
+    {
+        "text": "Quel est le plus grand océan du monde?",
+        "options": [
+            "Atlantique",
+            "Pacifique",
+            "Indien",
+            "Arctique"
+        ],
+        "answer": 2
+    }
+]
+}
