@@ -1,40 +1,64 @@
-# Quiz QCM
-# 4 à 16 ans
-# entièrement paramétrable sans nécessiter connaissances en info
-# doc utilisateur permettant aux animateurs  comprendre créer modifier eux-mêmes leurs quiz
-# Il n'y a pas de limite pour le nombre de questions.
-# Le nombre d'essai sera paramétrable.
-# Les questions peuvent avoir plusieurs réponses possibles sans limite mais le joueur ne peut saisir qu'une seule réponse par question.
-# Les écrans du jeu (le jeu par lui-même et l'affichage des résultats) garderont un aspect semblable aux écrans du jeu de géographie. (Annexe 2)
-# Les points attribués à chaque question seront paramétrables.
-# Lors de l'écriture de la solution, il faut rendre le jeu complètement paramétrable (ce qui n'est pas le cas dans le jeu ci dessous.) c'est-à-dire que la feuille de code développé doit s'adapter aux changements sans modification de code. Ainsi, le thème, les questions, les réponses, le nombre d'essai et les points seront donc définis dans un fichier séparé du code pour s'adapter au jeu (fichier .JSON par exemple)
-# Lors de la phase de recette et lors de la démo, le jeu doit être capable de bien réagir aux données du recetteur. (Annexe 3)
-# Le code sera documenté pour le comprendre du mieux possible.
-# l faudra concevoir une notice utilisateur indiquant le mode opératoire pour adapter le jeu aux besoins de l'utilisateur.
-# =========================================================================================================================
-# =========================================================================================================================
+# pour gildas et robin:
+
+# -doc
+# -mode d'emploie
+# -clean le code
+# -clean les textes afficher
+# -ajouter des themes avec de bonne question
+# -coder les erreur(si j'amais la personne code n'importe quoi ca relance le prompt au lieu de cracher)(Gestion des exceptions et des erreurs)
+# -verifier que toute les focntionnalité son présente
+
+# et j'ai pas encore a réussi a coder ca
+# "Il faut que la question soit validée uniquement si toutes les bonnes réponses, et seulement celles-ci sont cochées"
+# mon code marche si une seule réponse est validé.
 
 
 import json
 import random
 
+
 # récupération des questions et des réponses dans le fichier JSON
 with open("C:/Users/bapto/OneDrive/Bureau/AP-QUIZ-BRA/questionslibrary.json", "r") as f:
     data = json.load(f)
 
-
-def nombre_question():
-    # demande le nombre de question pour le quiz
-    print("Combien shouaitez vous de question pour votre quizz ?")
-    nombre_questions = int(input())
-    return nombre_questions
+main()
 
 
-def nombre_question():
-    # demande le nombre de question pour le quiz
-    print("Combien shouaitez vous de question pour votre quizz ?")
-    nombre_questions = int(input())
-    return nombre_questions
+def main():
+    # recupère les donnée ranger et mélanger dans la fonction tri
+    questions = tri_questions()
+    # recupère le nombre de question que tu veux
+    nombre_questions = nombre_question()
+    # recupère le nombre de choix par question
+    nombreqcm = choix_nombre_QCM()
+
+    print("*** Début du Quiz ***\n")
+    # recupère le nom de l'utilisateur
+    nom = input(" Entrez votre nom: ").title()
+    # espace
+    print()
+    print("\nBien joué {0}, vous avez repondu à {1} sur {2} questions.".format(
+        nom, quiz(questions, nombre_questions, nombreqcm), nombre_questions))
+    print("veux tu faire une autre parti ?(oui/non)")
+    restart = input()
+    # relance le quiz
+    if restart == "oui":
+        main()
+    # relance pas le quiz
+    else:
+        print("aurevoir")
+
+
+def tri_questions():
+    theme = choix_theme()
+    # mélange les questions
+    random.shuffle(data[theme])
+    # tri pour garder que le contenu des questions et des réponses
+    result = {}
+    for item in data[theme]:
+        result[item["text"]] = {"options": item["options"],
+                                "answer": item["answer"]}
+    return result
 
 
 def choix_theme():
@@ -56,44 +80,43 @@ def choix_theme():
     return theme
 
 
-def tri_questions():
-    theme = choix_theme()
-    # mélange les questions
-    random.shuffle(data[theme])
-    # tri pour garde que le contenue des questions et des réponses
-    result = {}
-    for item in data[theme]:
-        result[item["questions"]] = item["answers"]
-    return result
+def nombre_question():
+    # demande le nombre de question pour le quiz
+    print("Combien shouaitez vous de question pour votre quizz ?")
+    nombre_questions = int(input())
+    return nombre_questions
 
 
-def main():
-    questions = tri_questions()
-    nombre_questions = nombre_question()
-    print("*** Début du Quiz ***\n")
-    nom = input(" Entrez votre nom: ").title()
-    print()
-    print("\nBien joué {0}, vous avez repondu à {1} sur {2} questions.".format(
-        nom, quiz(questions, nombre_questions), nombre_questions))
+def choix_nombre_QCM():
+    # demande le nombre de choix par question
+    print("Combien shouaitez de choix par Question (2 minimum)?")
+    qcm = int(input())
+    return qcm
 
 
-def quiz(qs, nq):
-    '''
-    fonction de quizz et calcul des points
-    paramètre d'entree: sq: type Dictionnaire 
-    paramètre de sortie: a
-    '''
+def quiz(qs, nq, nqcm):
+
     points = 0
     for i, (qu, an) in enumerate(qs.items()):
         if i >= nq:
             break
-        if input(qu).lower() == an.lower():
+        print(qu)
+
+        melangeOption = an['answer'].copy()
+        melangeOption.extend(an['options'][:nqcm-len(an['answer'])])
+        random.shuffle(melangeOption)
+
+        for j, opt in enumerate(melangeOption):
+            print(f"{j+1}. {opt}")
+
+        answer = input("Recopier la bonne réponse :")
+        print(an['answer'])
+        if answer in an['answer']:
+            print("Correct!")
             points += 1
-            print("Juste.")
         else:
-            print("Oups, la bonne réponse est \"{}\".".format(an))
+            print("Incorrect!")
     return points
 
 
-if __name__ == "__main__":
-    main()
+# pour gildas et robin

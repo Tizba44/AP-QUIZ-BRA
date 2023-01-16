@@ -21,6 +21,9 @@ def main():
         nom, quiz(questions), len(questions)))
 
 
+z
+
+
 def quiz(qs):
     '''
     fonction de quizz et calcul des points
