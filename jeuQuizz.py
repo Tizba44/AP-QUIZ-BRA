@@ -21,9 +21,6 @@ def main():
         nom, quiz(questions), len(questions)))
 
 
-z
-
-
 def quiz(qs):
     '''
     fonction de quizz et calcul des points
@@ -35,8 +32,7 @@ def quiz(qs):
         if input(qu).lower() == an.lower():
             points += 1
             print("Juste.")
-        else:
-            print("Oups, la bonne réponse est \"{}\".".format(an))
+
     return points
 
 

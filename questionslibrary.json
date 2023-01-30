@@ -1,15 +1,51 @@
 {
     "geographie": [
         {
-            "text": "Quel est la capitale du Perou ?",
-            "options": [
+            "question": "1 Quel est la capitale du Perou ?",
+            "faux": [
                 "Limace",
                 "Lime a ongle"
             ],
-            "answer": [
+            "vrai": [
                 "Lima",
                 "Limo"
             ]
+        },
+        {
+            "question": "2 Quel est la capitale du Perou ?",
+            "faux": [
+                "Limace",
+                "Lime a ongle"
+            ],
+            "vrai": [
+                "Lima",
+                "Limo"
+            ]
+        },
+        {
+            "question": "3 Quel est la capitale du lplk?",
+            "faux": [
+                "Limace",
+                "Lime a ongle",
+                "Limace",
+                "Lime a ongle"
+            ],
+            "vrai": [
+                "Lima",
+                "Limo"
+            ]
+        }
+    ],
+    "2emetheme": [
+        {
+            "question": "Quel est la capitale du lplk?",
+            "faux": [
+                "Limace",
+                "Lime a ongle",
+                "Limace",
+                "Lime a ongle"
+            ],
+            "vrai": []
         }
     ]
 }
