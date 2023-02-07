@@ -1,7 +1,7 @@
 {
     "les chats": [
         {
-            "question": "combien à de vie un chat ?",
+            "question": "combien a de vie un chat ?",
             "faux": [
                 "1",
                 "2",
@@ -18,7 +18,7 @@
             ]
         },
         {
-            "question": "commment s'apelle la plus grosse race de chat ?",
+            "question": "comment s'appelle la plus grosse race de chat ?",
             "faux": [
                 "Siamois",
                 "Persan",
@@ -77,7 +77,7 @@
             "question": "Si un chat est brun, alors...",
             "vrai": [],
             "faux": [
-                "mâle",
+                "male",
                 "femelle"
             ]
         },
@@ -85,10 +85,10 @@
             "question": "Si un chat est brun, alors...",
             "vrai": [
                 "femelle",
-                "mâle avec 3 chromosomes"
+                "male avec 3 chromosomes"
             ],
             "faux": [
-                "c'est un mâle"
+                "c'est un male"
             ]
         }
     ]

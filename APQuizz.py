@@ -44,18 +44,6 @@ def main():
         print("aurevoir")
 
 
-def tri_questions(a):
-    theme = a
-    # mélange les questions
-    random.shuffle(data[theme])
-    # tri pour garder que le contenu des questions et des réponses
-    result = {}
-    for item in data[theme]:
-        result[item["question"]] = {"faux": item["faux"],
-                                    "vrai": item["vrai"]}
-    return result
-
-
 def choix_theme():
     print("Sélectionnez un theme:")
     compteur = 0
@@ -68,6 +56,7 @@ def choix_theme():
 
     while True:
         try:
+            # demande le t
             choix = input(
                 "Veuillez entrer un nombre entre 1 et " + str(compteur) + " : ")
             if 1 <= int(choix) <= int(compteur):
@@ -77,6 +66,7 @@ def choix_theme():
         except ValueError:
             print("Veuillez entrer un nombre entier.")
     compteur = 0
+
     for key, value in data.items():
         compteur += 1
         if type(value) == list:
@@ -86,18 +76,49 @@ def choix_theme():
     return theme
 
 
+def tri_questions(a):
+    theme = a
+    # mélange les questions
+    random.shuffle(data[theme])
+    # tri pour garder que le contenu des questions et des réponses
+    result = {}
+    for item in data[theme]:
+        result[item["question"]] = {"faux": item["faux"],
+                                    "vrai": item["vrai"]}
+    return result
+
+
 def nombre_question():
-    # demande le nombre de question pour le quiz
-    print("Combien shouaitez vous de question pour votre quizz ?")
-    nombre_questions = int(input())
-    return nombre_questions
+
+    while True:
+        try:
+            # demande le nombre de question pour le quiz
+            nombre_questions = input(
+                "Combien shouaitez vous de question pour votre quizz ?")
+            if 1 <= int(nombre_questions):
+                break
+            else:
+                print("Veuillez entrer un nombre entier. ")
+        except ValueError:
+            print("Veuillez entrer un nombre entier.")
+
+    return int(nombre_questions)
 
 
 def choix_nombre_QCM():
-    # demande le nombre de choix par question
-    print("Combien shouaitez de choix par Question (2 minimum)?")
-    qcm = int(input())
-    return qcm
+    while True:
+        try:
+            # demande le nombre de choix par question
+            qcm = input(
+                "Combien shouaitez de choix par Question (2 min / 10 max)?")
+            if 2 <= int(qcm) <= 10:
+                break
+            else:
+                print("Veuillez entrer un nombre entre 1 et 10 ")
+        except ValueError:
+            print("Veuillez entrer un nombre entier.")
+
+    return int(qcm)
 
 
 def quiz(nombre_questions, questions, nombreqcm):
