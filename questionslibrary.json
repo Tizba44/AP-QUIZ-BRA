@@ -1,51 +1,95 @@
 {
-    "geographie": [
+    "les chats": [
         {
-            "question": "1 Quel est la capitale du Perou ?",
+            "question": "combien à de vie un chat ?",
             "faux": [
-                "Limace",
-                "Lime a ongle"
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "8",
+                "9",
+                "10"
             ],
             "vrai": [
-                "Lima",
-                "Limo"
+                "7"
             ]
         },
         {
-            "question": "2 Quel est la capitale du Perou ?",
+            "question": "commment s'apelle la plus grosse race de chat ?",
             "faux": [
-                "Limace",
-                "Lime a ongle"
+                "Siamois",
+                "Persan",
+                "Ragdoll",
+                "Abyssin",
+                "sphynx"
             ],
             "vrai": [
-                "Lima",
-                "Limo"
+                "maine coon"
             ]
         },
         {
-            "question": "3 Quel est la capitale du lplk?",
-            "faux": [
-                "Limace",
-                "Lime a ongle",
-                "Limace",
-                "Lime a ongle"
-            ],
+            "question": "Quelle est la race de chat la plus commune ?",
             "vrai": [
-                "Lima",
-                "Limo"
-            ]
-        }
-    ],
-    "2emetheme": [
-        {
-            "question": "Quel est la capitale du lplk?",
-            "faux": [
-                "Limace",
-                "Lime a ongle",
-                "Limace",
-                "Lime a ongle"
+                "Chartreux"
             ],
-            "vrai": []
+            "faux": [
+                "Manx",
+                "Siamese",
+                "Persan",
+                "Ragdoll",
+                "Abyssin",
+                "Sphynx",
+                "Maine Coon",
+                "British Shorthair",
+                "American Shorthair",
+                "Bengal"
+            ]
+        },
+        {
+            "question": "Est-ce que les chats peuvent nager ?",
+            "vrai": [
+                "Oui"
+            ],
+            "faux": [
+                "Non"
+            ]
+        },
+        {
+            "question": "Combien de pattes ont les chats ?",
+            "vrai": [
+                "4"
+            ],
+            "faux": [
+                "1",
+                "2",
+                "3",
+                "5",
+                "6",
+                "8",
+                "9",
+                "10"
+            ]
+        },
+        {
+            "question": "Si un chat est brun, alors...",
+            "vrai": [],
+            "faux": [
+                "mâle",
+                "femelle"
+            ]
+        },
+        {
+            "question": "Si un chat est brun, alors...",
+            "vrai": [
+                "femelle",
+                "mâle avec 3 chromosomes"
+            ],
+            "faux": [
+                "c'est un mâle"
+            ]
         }
     ]
 }

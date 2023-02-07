@@ -9,20 +9,7 @@ with open("C:/Users/bapto/OneDrive/Bureau/AP-QUIZ-BRA/questionslibrary.json", "r
     data = json.load(f)
 
 
-# while True:
-#     try:
-#         choix = input(
-#             "Veuillez entrer un nombre entre 1 et " + str(compteur) + " : ")
-#         if 1 <= int(choix) <= int(compteur):
-#             break
-#         else:
-#             print("Veuillez entrer un nombre entre 1 et " + str(compteur))
-#     except ValueError:
-#         print("Veuillez entrer un nombre entier.")
-
-
 def main():
-
     # recupère les donnée ranger et mélanger dans la fonction tri
     theme = choix_theme()
     questions = tri_questions(theme)
@@ -118,6 +105,7 @@ def quiz(nombre_questions, questions, nombreqcm):
     points = 0
     # crée une boucle qui parcourt les items (question et réponse) de la variable
     # "questions" en utilisant l'itérateur "enumerate" pour compter le nombre de questions.
+    # qu =question  an = faux/vrai
     for i, (qu, an) in enumerate(questions.items()):
         # si le nombre de question est atteint alors on arrete le quiz
         if i == nombre_questions:
@@ -148,14 +136,22 @@ def corrige(answer, correction):
     answer = answer.split(',')
     # compte le nombre de bonnnne réponse et si c'est les même
     # (si on écrit dans le désordre les réponse c'est bon quand même)
-    print(correction)
-    if Counter(answer) == Counter(correction):
+
+    # Pour répondre a une question sans bonne réponse l'utilisateur peux taper rien  c'est = ['']
+    # alors qu'un tableau vide = [] (dans le json) donc j'ai rajouter des condition pour que cela fonctionne
+    # et j'ai mis rien a la place du vide pour que ça soit plus clair pour la boucle while/except
+    if (answer == ["rien"] and correction == []):
         print("Correct!")
         # donne 1 point
         points = 1
     else:
-        points = 0
-        print("Incorrect!")
+        if Counter(answer) == Counter(correction):
+            print("Correct!")
+            # donne 1 point
+            points = 1
+        else:
+            points = 0
+            print("Incorrect!")
     return points
 
 
