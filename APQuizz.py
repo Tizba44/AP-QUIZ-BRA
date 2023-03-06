@@ -5,7 +5,7 @@ import random
 
 
 # récupération des questions et des réponses dans le fichier JSON
-with open("C:/Users/bapto/OneDrive/Bureau/AP-QUIZ-BRA/questionslibrary.json", "r") as f:
+with open("questionslibrary.json", "r") as f:
     data = json.load(f)
 
 
@@ -32,7 +32,7 @@ def main():
         nom, quiz(nombre_questions, questions, nombreqcm), nombre_questions))
 
     # demande si tu veux refaire une parti
-    print("veux tu faire une autre parti ?(oui/non)")
+    print("veux tu faire une autre partie ?(oui/non)")
     restart = input()
 
     # relance le quiz
@@ -53,10 +53,10 @@ def choix_theme():
         compteur += 1
         if type(value) == list:
             print(str(compteur)+"." + key)
-
+    # structure while qui gère les erreurs d'input
     while True:
         try:
-            # demande le t
+            # demande quel theme tu veux selectionner
             choix = input(
                 "Veuillez entrer un nombre entre 1 et " + str(compteur) + " : ")
             if 1 <= int(choix) <= int(compteur):
@@ -143,7 +143,7 @@ def quiz(nombre_questions, questions, nombreqcm):
         for j, opt in enumerate(melangeOption):
             print(f"{j+1}. {opt}")
         answer = input(
-            "Recopie la bonne réponse (si + d'une réponse écrire: reponse1,reponse2 ): ")
+            "Recopie la bonne réponse (si aucune réponse taper:rien , si + d'une réponse écrire:reponse1,reponse2): ")
         correction = an['vrai']
 
         # ajoute les points

@@ -80,15 +80,223 @@
                 "male",
                 "femelle"
             ]
+        }
+    ],
+    "foot": [
+        {
+            "question": "combien il y a t-il de joueurs sur un terrain ?",
+            "faux": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "14",
+                "6",
+                "12",
+                "9",
+                "10"
+            ],
+            "vrai": [
+                "11"
+            ]
         },
         {
-            "question": "Si un chat est brun, alors...",
+            "question": "Quels sont les deux meilleurs joueurs de l'histoire du football ?",
+            "faux": [
+                "Pele & Maradona",
+                "Messi & Maradona",
+                "Ronaldo & Pele",
+                "Messi & Pele",
+                "Ronaldo & Maradona"
+            ],
             "vrai": [
-                "femelle",
-                "male avec 3 chromosomes"
+                "Messi & Ronaldo"
+            ]
+        },
+        {
+            "question": "Quelle est la nationalité de Mbappe?",
+            "vrai": [
+                "Francais"
             ],
             "faux": [
-                "c'est un male"
+                "Anglais",
+                "Hongrois",
+                "Allemand"
+            ]
+        },
+        {
+            "question": "Quelle joueur est nommé est surnommé R9 ?",
+            "vrai": [
+                "Ronaldo(le bresilien)"
+            ],
+            "faux": [
+                "Cristiano Ronaldo",
+                "Messi",
+                "Pelé"
+            ]
+        },
+        {
+            "question": "Combien de temps dure un match de foot?",
+            "vrai": [
+                "90 minutes"
+            ],
+            "faux": [
+                "80 minutes",
+                "60 minutes",
+                "95 minutes",
+                "75 minutes"
+            ]
+        },
+        {
+            "question": "Quel(s) club(s) est surnommé les canaris ?",
+            "vrai": [
+                "Norwich City",
+                "FC Nantes"
+            ],
+            "faux": [
+                "Manchester United",
+                "Real Madrid"
+            ]
+        },
+        {
+            "question": "Quels sports est meilleur que le football ?",
+            "vrai": [],
+            "faux": [
+                "Basket",
+                "Handball",
+                "Formule 1",
+                "Rugby"
+            ]
+        }
+    ],
+    "CSGO": [
+        {
+            "question": "Dans quelle catégorie de jeu CSGO appartient-il ?",
+            "faux": [
+                "MOBA",
+                "RTS",
+                "RPG"
+            ],
+            "vrai": [
+                "FPS"
+            ]
+        },
+        {
+            "question": "Combien de joueurs peuvent jouer dans une équipe CSGO standard ?",
+            "faux": [
+                "3",
+                "4",
+                "6"
+            ],
+            "vrai": [
+                "5"
+            ]
+        },
+        {
+            "question": "Quel est le mode de jeu le plus populaire de CSGO ?",
+            "vrai": [
+                " Défense de bombe"
+            ],
+            "faux": [
+                "Capture de drapeau",
+                "Match à mort par équipe",
+                "Défense des otages"
+            ]
+        },
+        {
+            "question": "Combien de cartes officielles CSGO y a-t-il actuellement ?",
+            "vrai": [],
+            "faux": [
+                "10",
+                "5",
+                "30",
+                "40"
+            ]
+        },
+        {
+            "question": "Combien de types de grenades différentes les joueurs peuvent-ils acheter ?",
+            "vrai": [
+                "3"
+            ],
+            "faux": [
+                "1",
+                "2",
+                "4"
+            ]
+        },
+        {
+            "question": "Combien de modes de jeu différents CSGO propose-t-il ?",
+            "faux": [
+                "2",
+                "3",
+                "5"
+            ],
+            "vrai": [
+                "4"
+            ]
+        },
+        {
+            "question": "Quelle est la durée d'une manche standard dans CSGO ?",
+            "faux": [
+                "60 secondes",
+                "120 secondes",
+                "150 secondes"
+            ],
+            "vrai": [
+                "90 secondes"
+            ]
+        },
+        {
+            "question": "Quel est le nom du personnage jouable emblématique de CSGO ?",
+            "vrai": [
+                "The Terrorist"
+            ],
+            "faux": [
+                "Master Chief",
+                "Solid Snake",
+                "Gordon Freeman"
+            ]
+        },
+        {
+            "question": "Quelle est la somme maximale d'argent qu'un joueur peut posséder dans CSGO ?",
+            "vrai": [
+                "$16 000"
+            ],
+            "faux": [
+                "$18 000",
+                "$20 000",
+                "$22 000"
+            ]
+        },
+        {
+            "question": "Quel est le nom de la carte la plus jouée dans CSGO ?",
+            "vrai": [
+                "Dust2"
+            ],
+            "faux": [
+                "Mirage",
+                "Inferno",
+                "Nuke"
+            ]
+        },
+        {
+            "question": "Un skin CSGO coûte toujours plus cher que 5€ ?",
+            "vrai": [
+                "Faux"
+            ],
+            "faux": [
+                "Vrai"
+            ]
+        },
+        {
+            "question": "Quelles armes existent sur CSGO ?",
+            "vrai": [
+                "M4A1S",
+                "M4A4",
+                "SG-35"
+            ],
+            "faux": [
+                "AK-45"
             ]
         }
     ]
